@@ -1,4 +1,4 @@
-I am Putting My LeetCode Solution In This Repository.
+Hello My Friends , In This Repository I am Putting My LeetCode Solution .
 
 You can See My Code And also you can Copy them for your Learning.
 
