@@ -26,7 +26,7 @@ public:
         for(int i=1;i<=31;i++)
         {
             if(ans==n)return true;
-            if(ans<INT_MAX/3 || ans>INT_MIN/3)
+            if(ans<INT_MAX/3 and ans>INT_MIN/3)
             ans=ans*3;
         }
         return false;
