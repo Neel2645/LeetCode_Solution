@@ -15,3 +15,21 @@ public:
         else return searchBST(root->right,val);
     }
 };
+
+
+//! Method - 2
+//? Time Complexity - O(height) or O(log n)  
+//? Space Complexity - O(1)
+
+class Solution {
+public:
+    TreeNode* searchBST(TreeNode* root, int val) {
+        while(root)
+        {
+            if(root->val == val) return root;
+            else if(val < root->val) root = root->left;
+            else root = root->right;
+        }
+        return root;
+    }
+};
