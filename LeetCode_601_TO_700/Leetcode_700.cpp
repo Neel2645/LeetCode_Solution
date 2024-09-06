@@ -1,8 +1,8 @@
 //* Question 700 - Search in a Binary Search Tree
 
 //! Method - 1
-//? Time Complexity - O(height) or O(log n)  
-//? Space Complexity - O(height) or O(log n)
+//? Time Complexity - O(height) or O(log n) or O(n)
+//? Space Complexity - O(height) or O(log n) or O(n)
 
 
 class Solution {
@@ -18,7 +18,7 @@ public:
 
 
 //! Method - 2
-//? Time Complexity - O(height) or O(log n)  
+//? Time Complexity - O(height) or O(log n)  or O(n)
 //? Space Complexity - O(1)
 
 class Solution {
