@@ -81,3 +81,28 @@ public:
         return head;
     }
 };
+
+
+//! Method - 3
+//? Time Complexity =   O(n)
+//? Space Complexity =   O(1)
+
+
+class Solution {
+public:
+    ListNode* oddEvenList(ListNode* head) {
+        if(!head or !head->next) return head;
+        ListNode* odd = head;
+        ListNode* even = head->next;
+        ListNode* second = even;
+        while(even and even->next)
+        {
+            odd->next = even->next;
+            even->next = even->next->next;
+            odd = odd->next;
+            even = even->next;
+        }
+        odd->next = second;
+        return head;
+    }
+};
