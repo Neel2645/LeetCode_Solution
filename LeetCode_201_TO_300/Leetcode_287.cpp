@@ -16,8 +16,7 @@ public:
         }
         return -1;
     }
-};
-
+}
 
 
 //! Method - 2
