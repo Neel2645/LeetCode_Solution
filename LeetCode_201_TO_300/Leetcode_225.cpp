@@ -46,3 +46,42 @@ public:
     }
 };
 
+
+//! Method - 2
+//? Time Complexity - O(1) For Push, Pop ,Top , Empty
+//? Space Complexity - O(1) 
+
+
+class MyStack {
+public:
+    queue<int> q;
+    MyStack() {
+    }
+    
+    void push(int x) {
+        q.push(x);
+        int s =q.size();
+        for(int i=1;i<s;i++)
+        {
+            q.push(q.front());
+            q.pop();
+        }
+    }
+    
+    int pop() {
+        int x = q.front();
+        q.pop();
+        return x;
+    }
+    
+    int top() {
+        int x = q.front();
+        return x;
+    }
+    
+    bool empty() {
+        return q.size()==0;
+    }
+};
+
+
