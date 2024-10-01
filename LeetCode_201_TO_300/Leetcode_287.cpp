@@ -36,3 +36,34 @@ public:
         return -1;
     }
 };
+
+
+//! Method - 3
+//? Time  Complexity - O(n)
+//? Space Complexity - O(1)
+
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int slow = nums[0];
+        int fast = nums[0];
+
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+
+        while(slow != fast)
+        {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }
+
+        fast = nums[0];
+
+        while(slow != fast)
+        {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
+    }
+};
