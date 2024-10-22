@@ -34,3 +34,36 @@ public:
         return build(post,0,post.size()-1,in,0,in.size()-1);
     }
 };
+
+
+//! Method - 2
+//? Time Complexity - O(n)  
+//? Space Complexity - O(n) 
+
+class Solution {
+public:
+
+    TreeNode* build(vector<int>& in,int il,int ih, 
+    vector<int>& post,int pl,int ph,unordered_map<int,int> &mp)
+    {
+        if(il>ih) return NULL;
+        else if(il==ih) new TreeNode(in[il]);
+
+        TreeNode* root = new TreeNode(post[ph]);
+        int i = mp[root->val];
+        int n = i - il;
+
+        root->left = build(in,il,i-1,post,pl,pl+n-1,mp);
+        root->right = build(in,i+1,ih,post,pl+n,ph-1,mp);
+        return root;
+    }
+
+    TreeNode* buildTree(vector<int>& in, vector<int>& post) {
+        unordered_map<int,int> mp;
+        for(int i=0;i<in.size();i++)
+        {
+            mp[in[i]] = i;
+        }
+        return build(in,0,in.size()-1,post,0,post.size()-1,mp);
+    }
+};
