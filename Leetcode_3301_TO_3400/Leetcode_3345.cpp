@@ -22,3 +22,23 @@ public:
         return -1;
     }
 };
+
+
+//! Method - 2
+//? Time Complexity - O(T * log n)
+//? Space Complexity - O(1)
+
+class Solution {
+public:
+    int smallestNumber(int n, int t) {
+        while(true)
+        {
+            string s = to_string(n);
+            int p = 1;
+            for(int i=0;i<s.size();i++) p = p * (s[i]-'0');
+            if(p % t == 0) return n;
+            n++; 
+        }
+        return -1;
+    }
+};
