@@ -31,6 +31,7 @@ public:
 class Solution {
 public:
     int smallestNumber(int n, int t) {
+        if(t==1) return n;
         while(true)
         {
             string s = to_string(n);
